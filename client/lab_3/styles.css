@@ -1,1 +1,23 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
+  p {
+      background-color:aquamarine;
+  }
+
+div
+.outer_flex {
+    display: flex;
+}
+
+.inner_flex { 
+    flex: 0 1 auto}
+
+.inner_flex_2 {}
+
+.inner_flex_3 {}
