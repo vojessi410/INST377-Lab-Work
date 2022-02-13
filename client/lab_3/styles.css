@@ -73,14 +73,6 @@
   height: 300px;
 }
 
-.first-item {
-  order: 1;
-}
-
-.last-item {
-  order: -1;
-}
-
 .group_link {
   align-self: flex-end;
   margin-bottom: 20px;
@@ -91,6 +83,13 @@
   margin-bottom: 20px;
 }
 
+.first-item {
+  order: 1;
+}
+
+.last-item {
+  order: -1;
+}
 
 
 .footer {
