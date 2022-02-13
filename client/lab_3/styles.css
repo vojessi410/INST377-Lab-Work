@@ -14,14 +14,15 @@
 
 .menu-container {
   color: #fff;
-  background-color: #5995DA;
+  background-color: #5995DA;  /* Blue */
   padding: 20px 0;
+  /* ... */
   display: flex;
-  justify-content: center;
+  justify-content: center;    /* Add this */
 }
 
 .menu {
-  border: 1px solid #fff;
+  border: 1px solid #fff;  /* For debugging */
   width: 900px;
    display: flex;
   justify-content: space-between;
@@ -98,10 +99,6 @@
   flex: 1
   }
  
- .footer-three {
-  flex: 2;
-}
-
 .footer-one,
 .footer-three {
   background-color: #5995DA;
