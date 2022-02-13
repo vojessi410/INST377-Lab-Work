@@ -10,26 +10,24 @@
   background-color: rgba(0,139, 139,0.8);
   padding: 10px 15px;
   margin: 0;
-  margin-bottom: 10px;
 }
 
 .menu-container {
   color: #fff;
-  background-color: #5995DA;  /* Blue */
+  background-color: #5995DA;
   padding: 20px 0;
-  /* ... */
   display: flex;
-  justify-content: center;    /* Add this */
+  justify-content: center;
 }
 
 .menu {
-  border: 1px solid #fff;  /* For debugging */
+  border: 1px solid #fff;
   width: 900px;
    display: flex;
   justify-content: space-between;
 }
 .links {
-  border: 1px solid #fff;  /* For debugging */
+  border: 1px solid #fff;
   display: flex;
   justify-content: flex-end;
 }
@@ -50,8 +48,7 @@
   height: 300px;
   display: flex;
   justify-content: space-between;
-   /* ... */
-  align-items: center;  /* Add this */
+  align-items: center;
 }
 
 .photo-grid-container {
@@ -62,20 +59,16 @@
 .photo-grid {
   width: 900px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
+  flex-direction: row; 
+  align-items: center;
 }
 
 .photo-grid-item {
   border: 1px solid #fff;
   width: 300px;
   height: 300px;
-}
-
-.photo-grid {
-  /* ... */
-  flex-direction: row;  
-  align-items: center;
 }
 
 .first-item {
@@ -86,11 +79,12 @@
   order: -1;
 }
 
-.demo,
-.main_page {
+.group_link,
+.github {
   align-self: flex-end;
   margin-bottom: 20px;
 }
+
 
 .footer {
   display: flex;
