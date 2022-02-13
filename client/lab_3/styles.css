@@ -27,6 +27,7 @@
    display: flex;
   justify-content: space-between;
 }
+
 .links {
   border: 1px solid #fff;
   display: flex;
@@ -80,11 +81,16 @@
   order: -1;
 }
 
-.group_link,
+.group_link {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
 .github {
   align-self: flex-end;
   margin-bottom: 20px;
 }
+
 
 
 .footer {
