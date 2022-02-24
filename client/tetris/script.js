@@ -101,7 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // freeze function
   function freeze() {
-    if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
+    if (
+      current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))
+    ) {
       current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
       // start a new tetromino falling
       random = nextRandom;
@@ -118,11 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // move the tetromino left, unless is at the edge or there is a blockage
   function moveLeft() {
     undraw();
-    const isAtLeftEdge = current.some((index) => (currentPosition + index) % width === 0);
+    const isAtLeftEdge = current.some(
+      (index) => (currentPosition + index) % width === 0
+    );
 
     if (!isAtLeftEdge) currentPosition -= 1;
 
-    if (current.some((index) => squares[currentPosition + index].classList.contains('taken'))) {
+    if (
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
+    ) {
       currentPosition += 1;
     }
 
@@ -132,11 +138,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // move the tetromino right, unless is at the edge or there is a blockage
   function moveRight() {
     undraw();
-    const isAtRightEdge = current.some((index) => (currentPosition + index) % width === width - 1);
+    const isAtRightEdge = current.some(
+      (index) => (currentPosition + index) % width === width - 1
+    );
 
     if (!isAtRightEdge) currentPosition += 1;
 
-    if (current.some((index) => squares[currentPosition + index].classList.contains('taken'))) {
+    if (
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
+    ) {
       currentPosition -= 1;
     }
 
@@ -147,7 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function rotate() {
     undraw();
     currentRotation++;
-    if (currentRotation === current.length) { // if current rotation gets to 4, make it go back to 0
+    if (currentRotation === current.length) {
+      // if current rotation gets to 4, make it go back to 0
       currentRotation = 0;
     }
     current = theTetrominoes[random][currentRotation];
@@ -196,7 +207,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // add score
   function addScore() {
     for (let i = 0; i < 199; i += width) {
-      const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
+      const row = [
+        i,
+        i + 1,
+        i + 2,
+        i + 3,
+        i + 4,
+        i + 5,
+        i + 6,
+        i + 7,
+        i + 8,
+        i + 9
+      ];
 
       if (row.every((index) => squares[index].classList.contains('taken'))) {
         score += 10;
@@ -214,7 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // game over
   function gameOver() {
-    if (current.some((index) => squares[currentPosition + index].classList.contains('taken'))) {
+    if (
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
+    ) {
       scoreDisplay.innerHTML = 'end';
       clearInterval(timerId);
     }
