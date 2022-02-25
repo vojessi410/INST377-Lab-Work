@@ -105,3 +105,8 @@
     flex: initial;
     width: 300px;
   }
+
+  .carousel {
+      overflow: hidden;
+      max-width: 1000px;
+  }
