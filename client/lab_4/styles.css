@@ -58,6 +58,25 @@
 .carousel .carousel_item--hidden {
     display: none;
 }
+
+.carousel .carousel_item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.carousel .carousel_item--visible {
+    display: block;
+}
+
+.carousel .carousel_actions {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
   
   .photo-grid-item {
     border: 1px solid #fff;
