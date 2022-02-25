@@ -48,19 +48,16 @@
     align-items: center;
   }
   
-  .photo-grid-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .photo-grid {
-    width: 900px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row-reverse; 
-    align-items: center;
-  }
+  .carousel {
+    overflow: hidden;
+    max-width: 600px;
+    position: relative;
+}
+
+.carousel .carousel_item,
+.carousel .carousel_item--hidden {
+    display: none;
+}
   
   .photo-grid-item {
     border: 1px solid #fff;
@@ -108,5 +105,11 @@
 
   .carousel {
       overflow: hidden;
-      max-width: 1000px;
+      max-width: 600px;
+      position: relative;
+  }
+
+  .carousel .carousel_item,
+  .carousel .carousel_item--hidden {
+      display: none;
   }
