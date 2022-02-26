@@ -1,16 +1,18 @@
 let slidePosition = 0;
-const slides = document.querySelectorAll('.carousel_item');
+const slides = document.getElementsByClassName('carousel_item')
+//const slides = document.querySelectorAll('.carousel_item');
 const totalSlides = slides.length;
 
 
 document.
-  document.querySelector('#carousel_button--next')
+  getElementById('carousel_button--next')
+  //document.querySelector('#carousel_button--next')
   .addEventListener('click', function() {
     moveToNextSlide();
   });
 
 document.
-  document.querySelector('#carousel_button--prev')
+  getElementById('#carousel_button--prev')
   .addEventListener('click', function() {
     moveToPrevSlide();
   });
