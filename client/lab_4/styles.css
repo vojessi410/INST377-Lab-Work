@@ -113,7 +113,7 @@
   }
 }
 
-/*.photo-grid {
+.photo-grid {
   width: 900px;
   display: flex;
   justify-content: center;
@@ -145,7 +145,7 @@
 .last-item {
   order: -1;
 }
-*/
+
 
 .footer {
   display: flex;
