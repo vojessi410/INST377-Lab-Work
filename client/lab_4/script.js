@@ -1,6 +1,6 @@
 let slidePosition = 0;
-// document.getElementsByClassName('carousel_item');
-const slides = document.querySelectorAll('.carousel_item');
+const slides = document.getElementsByClassName('carousel_item');
+// const slides = document.querySelectorAll('.carousel_item');
 const totalSlides = slides.length;
 
 function updateSlidePosition() {
@@ -34,16 +34,15 @@ function moveToPrevSlide() {
 }
 
 document
-  // .getElementById('carousel_button--next')
-  .document.querySelector('#carousel_button--next')
+  .getElementById('carousel_button--next')
+  // document.querySelector('#carousel_button--next')
   .addEventListener('click', () => {
     // eslint-disable-next-line no-use-before-define
     moveToNextSlide();
   });
 
 document
-  // .getElementById('carousel_button--prev')
-  .document.querySelector('#carousel_button--prev')
+  .getElementById('carousel_button--prev')
   .addEventListener('click', () => {
     // eslint-disable-next-line no-use-before-define
     moveToPrevSlide();
