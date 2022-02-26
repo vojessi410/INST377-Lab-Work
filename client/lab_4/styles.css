@@ -88,8 +88,8 @@
   border: 0;
   font-weight: bold;
   cursor: pointer;
-  width: auto;
-  height: auto;
+  width: 40px;
+  height: 40px;
 }
 
 .carousel_actions button#carousel_button--prev:focus {
