@@ -42,7 +42,7 @@ document
   });
 
 document
-  .getElementById('#carousel_button--prev')
+  .getElementById('carousel_button--prev')
   .addEventListener('click', () => {
     // eslint-disable-next-line no-use-before-define
     moveToPrevSlide();
