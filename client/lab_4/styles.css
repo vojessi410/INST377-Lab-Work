@@ -92,12 +92,12 @@
   height: auto;
 }
 
-.carousel .carousel_actions button#carousel_button--prev:focus {
+.carousel_actions button#carousel_button--prev:focus {
   margin-left: 20px;
   background-color: gray;
 }
 
-.carousel .carousel_actions button#carousel_button--next {
+.carousel_actions button#carousel_button--next:focus {
   margin-right: 20px;
   background-color: orange;
 }
