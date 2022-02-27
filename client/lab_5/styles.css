@@ -76,8 +76,9 @@ body {
   font-size: 14px;
 }
 
-.form-row label {
-  margin-bottom: 15px;
+.form-row label, .form-row input {
+  display: flex;
+  flex-direction: column;
 }
 
 .legacy-form-row {
