@@ -34,11 +34,11 @@ body {
 }
 
 .text-box-header {
-  text-align: center;
+  text-align: left;
   background-color: #F6F7F8;
   border: 1px solid #D6D9DC;
   border-radius: 3px;
-  padding: 10px;
+  padding: 30px;
   margin: 20px 25px;
   width: 80%;
 
