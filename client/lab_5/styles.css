@@ -47,6 +47,12 @@ body {
 
 }
 
+.text-box p {
+  font-size: 30px;
+  margin-bottom: 20px;
+
+}
+
 /* Page Layout */
 .columns {
   display: flex;
