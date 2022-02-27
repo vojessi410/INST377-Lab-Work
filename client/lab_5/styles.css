@@ -19,12 +19,12 @@ body {
 }
 
 .lab-form-header {
-  text-align: center;
+  text-align: left;
   background-color: palegoldenrod;
   border: 1px solid palegoldenrod;
   border-radius: 3px;
   
-  width: 80%;
+  width: 100%;
   margin: 40px 0;
   padding: 50px;
 
