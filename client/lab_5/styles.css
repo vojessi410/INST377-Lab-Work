@@ -23,7 +23,8 @@ body {
   background-color: palegoldenrod;
   border: 1px solid palegoldenrod;
   border-radius: 3px;
-  
+  display: flex;
+  align-items: center;
   width: 95%;
   margin: 30px 0;
   padding: 30px;
