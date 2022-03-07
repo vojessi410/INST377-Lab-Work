@@ -24,7 +24,6 @@ body {
 .columns form {
   display: flex;
   flex-direction: column;
-
 }
 
 .wrapper {
