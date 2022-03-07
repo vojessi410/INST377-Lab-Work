@@ -8,6 +8,45 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="header">Jessica Vo Lab 5</div>
+        <div class="columns">
+          <div class="page_item">
+            <form action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json" method="get">
+              <div class="form_item">
+                <label for='full-name'>First Name</label>
+                <input id='full-name' name='full-name' type='text'/>
+              </div>
+              
+              <div class="form_item">
+                <label for="food-preference">Food Preference</label>
+                <input id="food-preference" name="food-preference" type="text"/>
+              </div>
+              <fieldset class='veggie-form-row'>
+                <h1>Veggie or Vegan?</h1>
+                <input id='answer-1'
+                       name='answer'
+                       type='radio'
+                       value='Yes' />
+                <label for='answer-1' class='radio-label'>Yes</label>
+                <input id='answer-2'
+                       name='answer'
+                       type='radio'
+                       value='No'
+                       checked />
+                <label for='answer-2' class='radio-label'>No</label>
+              </fieldset>
+              <button class="button" type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="page_item">
+            This is going to be something in two weeks.
+          </div>
+        </div>
+      </div>
+    
+    <!--</div>
       <header class = 'lab-form-header'>
           <h1>Jessica Vo Lab 5</h1>
       </header>
@@ -46,27 +85,11 @@
             <button>Submit</button>
         </div>
           
-      </form>
+      </form>-->
 
       <script src="script.js"></script>
   </body>
 </html>
     
 
-    
-
-<!--<html lang='en'>
-  <head>
-    <meta charset='UTF-8'/>
-    <title>Speaker Submission</title>
-    <link rel='stylesheet' href='styles.css'/>
-  </head>
-  <body>
-    <header class='speaker-form-header'>
-      <h1>Speaker Submission</h1> (this is going to be )
-      <p><em>Want to speak at our fake conference? Fill out
-        this form.</em></p>
-    </header>
-  </body>
-</html>
--->
+  

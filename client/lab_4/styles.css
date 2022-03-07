@@ -54,9 +54,11 @@
 }
 
 .carousel {
+  display:flex;
   overflow: hidden;
   max-width: 600px;
   position: relative;
+  align-items:center;
 }
 
 .carousel .carousel_item,
@@ -74,23 +76,29 @@
   display: block;
 }
 
-.carousel .carousel_actions {
+.carousel_actions {
   display: flex;
-  width: 100%;
+  width: 620px;
   justify-content: space-between;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: -50%;
 }
 
-.carousel .carousel_actions button {
-  border-radius: 50px;
+.carousel-button {
+  height: 50px;
+  border-radius: 4px;
+  padding: 5px;
+}
+/*.carousel-button {
+  border-radius: 4px;
   border: 0;
   font-weight: bold;
   cursor: pointer;
   width: 40px;
-  height: 40px;
-}
+  height: 50px;
+  padding: 5px;
+}*/
 
 .carousel_actions button#carousel_button--prev:focus {
   margin-left: 20px;
