@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
+      ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    background-color: darkslategray;
+  
+  }
+  /* Page Layout */
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 35px;
+    align-items: center;
+  }
+  
+  .columns form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+  .container {
+    max-width: 960px;
+    margin-top: 25px;
+    
+  }
+  .header {
+    display: flex;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: hsl(48, 100%, 67%);
+  }
+  
+  .page_item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #efefef;
+    height: fit-content;
+  }
+  
+  .form_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 5px;
+  
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    margin: 20px 140px;
+  }
+  
+  .form_item input[type='text'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+  }
+  
+  .veggie-form-row {
+    border: none;
+    margin-bottom: 40px;
+    margin: 10px 100px;
+  }
+  
+  .veggie-form-row h1 {
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin: 10px 45px;
+  }
+  
+  .veggie-form-row .radio-label {
+    display: block;
+    font-size: 14px;
+    padding: 10px 40px 10px 40px;
+  }
+  
+  .veggie-form-row input[type='radio'] {
+    margin-top: 2px;
+  }
+  
+  .veggie-form-row .radio-label,
+  .veggie-form-row input[type='radio'] {
+    float: left;
+  }
+  
+  .button {
+    font-size: 16px;
+    font-weight: bold;
+  
+    color: #FFFFFF;
+    background-color: #5995DA;
+  
+    border: none;
+    border-radius: 3px;
+  
+    padding: 10px 40px;
+    cursor: pointer;
+  
+    margin: 10px 40px;
+  }
+  
+  .form_item button:hover {
+    background-color: #76AEED;
+  }
+  
+  .form_item button:active {
+    background-color: #407FC7;
+  }
