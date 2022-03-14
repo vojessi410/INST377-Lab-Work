@@ -6,19 +6,28 @@ function getRandomIntInclusive(min, max) {
 
 function restoArrayMake(dataArray) {
   console.log('fired dataHandler');
-  console.table(dataArray); // this is called "dot notation"
+  // console.table(dataArray); // this is called "dot notation"
   const range = [...Array(15).keys()];
   const listItems = range.map((item, index) => {
     const restNum = getRandomIntInclusive(0, dataArray.length - 1);
     return dataArray[restNum];
   });
   
-  console.log(listItems);
+  // console.log(listItems);
   return listItems;
 }
 
-function createHtmlList(collection){
+function createHtmlList(collection) {
+  console.log('fired HTML creator');
   console.log(collection);
+  const targetList = document.querySelector('.resto-list');
+  targetList.innerHTML = '';
+  collection.forEach((item) => {
+    const {name} = item;
+    const displayName = name.toLowerCase();
+    const injectThisItem = `<li>${displayName}</li>`;
+    targetList.innerHTML += injectThisItem;
+  });
 }
 
 async function mainEvent() { // the async keyword means we can make API requests
