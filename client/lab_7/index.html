@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jessica Vo Lab 7</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="header">Jessica Vo Lab 7</div>
+        <div class="columns">
+          <div class="page_item">
+            <form class="main_form">
+              <div class="form_item">
+                <label for='full-name'>First Name</label>
+                <input id='full-name' name='full-name' type='text'/>
+              </div>
+              
+              <div class="form_item">
+                <label for="food-preference">Food Preference</label>
+                <input id="food-preference" name="food-preference" type="text"/>
+              </div>
+
+              <fieldset class='veggie-form-row'>
+                <h1>Veggie or Vegan?</h1>
+                <input id='answer-1'
+                       name='answer'
+                       type='radio'
+                       value='Yes' />
+                <label for='answer-1' class='radio-label'>Yes</label>
+                <input id='answer-2'
+                       name='answer'
+                       type='radio'
+                       value='No'
+                       checked />
+                <label for='answer-2' class='radio-label'>No</label>
+              </fieldset>
+
+              <button class="button submit_button" type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="page_item">
+            <h2>Restaurant List</h2>
+            <ul class="resto-list"></ul> 
+          </div>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+  </body>
+</html>
+    
+
+  
