@@ -36,7 +36,6 @@ async function mainEvent() {
   const form = document.querySelector('.main_form');
   const submit = document.querySelector('.submit_button');
   const resto = document.querySelector('#restaurant_name');
-  const type = document.querySelector('#food_type');
   submit.style.display = 'none';
 
   const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
@@ -45,22 +44,12 @@ async function mainEvent() {
 
   if (arrayFromJson.data.length > 0) {
     submit.style.display = 'block';
-
     let currentArray = [];
     resto.addEventListener('input', async (event) => {
       console.log(event.target.value);
       if (currentArray.length < 1) {
         return;
       }
-    })
-
-    let currentArray1 = [];
-    type.addEventListener('input', async (event1) => {
-        console.log(event1.target.value);
-        if (currentArray1.length < 1) {
-          return;
-        }
-      })
 
       const selectResto = currentArray.filter((item) => {
         const lowerName = item.name.toLowerCase();
@@ -68,17 +57,9 @@ async function mainEvent() {
         return lowerName.includes(lowerValue);
       });
 
-      const selectType = currentArray1.filter((item) => {
-        const lowerName1 = item.name.toLowerCase();
-        const lowerValue1 = event1.target.value.toLowerCase();
-        return lowerName1.includes(lowerValue1);
-      });
-
       console.log(selectResto);
       createHtmlList(selectResto);
-      console.log(selectType);
-      createHtmlList(selectType);
-    };
+    });
 
     form.addEventListener('submit', async (submitEvent) => {
       // async has to be declared all the way to get an await
@@ -89,10 +70,6 @@ async function mainEvent() {
       currentArray = restoArrayMake(arrayFromJson.data);
       console.log(currentArray);
       createHtmlList(currentArray);
-
-      currentArray1 = restoArrayMake(arrayFromJson.data);
-      console.log(currentArray1);
-      createHtmlList(currentArray1);
     });
   }
 }

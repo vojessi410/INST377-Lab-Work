@@ -54,13 +54,6 @@ function getRandomIntInclusive(min, max) {
         }
       })
   
-      let currentArray1 = [];
-      type.addEventListener('input', async (event1) => {
-          console.log(event1.target.value);
-          if (currentArray1.length < 1) {
-            return;
-          }
-        })
   
         const selectResto = currentArray.filter((item) => {
           const lowerName = item.name.toLowerCase();
@@ -68,16 +61,9 @@ function getRandomIntInclusive(min, max) {
           return lowerName.includes(lowerValue);
         });
   
-        const selectType = currentArray1.filter((item) => {
-          const lowerName1 = item.name.toLowerCase();
-          const lowerValue1 = event1.target.value.toLowerCase();
-          return lowerName1.includes(lowerValue1);
-        });
   
         console.log(selectResto);
         createHtmlList(selectResto);
-        console.log(selectType);
-        createHtmlList(selectType);
       };
   
       form.addEventListener('submit', async (submitEvent) => {
@@ -89,10 +75,6 @@ function getRandomIntInclusive(min, max) {
         currentArray = restoArrayMake(arrayFromJson.data);
         console.log(currentArray);
         createHtmlList(currentArray);
-  
-        currentArray1 = restoArrayMake(arrayFromJson.data);
-        console.log(currentArray1);
-        createHtmlList(currentArray1);
       });
     }
   }
