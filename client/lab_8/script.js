@@ -29,9 +29,10 @@ function createHtmlList(collection) {
     targetList.innerHTML += injectThisItem;
   });
 }
-
+// TODO: reloading restaurants makes forms go weird places
 function initMap(targetId) {
-  const map = L.map(targetId).setView([51.505, -0.09], 13);
+  const latLong = [38.784, -76.872]; // -- should be PG County but isn't
+  const map = L.map(targetId).setView(latLong, 13);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -43,6 +44,13 @@ function initMap(targetId) {
   return map;
 }
 
+function addMapMarkers (map, collection) {
+  collection.forEach(item => {
+    const point = item.geocoded_column_1?.coordinates;
+    console.log(item.geocoded_column_1?.coordinates);
+    L.marker([point[1], point[0]]).addTo(map);
+  });
+}
 async function mainEvent() {
   // the async keyword means we can make API requests
   console.log(document.querySelector('.main_form'));
@@ -50,23 +58,31 @@ async function mainEvent() {
   const submit = document.querySelector('.submit_button');
   const resto = document.querySelector('#restaurant_name');
   const map = initMap('map');
+  const retrievalVar = 'restaurants';
   submit.style.display = 'none';
 
-  // const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
-  // const arrayFromJson = await results.json(); // This changes it into data we can use - an object
-  // console.log(arrayFromJson);
-  const arrayFromJson = {data: []}; // TODO: Remove debug tool
+  if (localStorage.getItem(retrievalVar) === undefined) {
+    const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
+    const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+    console.log(arrayFromJson);
+    localStorage.setItem(retrievalVar, JSON.stringify(arrayFromJson.data));
+  }
+  
+  const storedDataString = localStorage.getItem(retrievalVar);
+  const storedDataArray = JSON.parse(storedDataString);
+  console.log(storedDataArray);
+  // const arrayFromJson = {data: []}; // TODO: Remove debug tool
 
-  if (arrayFromJson.data.length > 0) {
+  if (storedDataArray.length > 0) {
     submit.style.display = 'block';
     let currentArray = [];
     resto.addEventListener('input', async (event) => {
       console.log(event.target.value);
-      if (currentArray.length < 1) {
-        return;
-      }
+      // if (currentArray.length < 1) {
+      // return;
+      // }
 
-      const selectResto = currentArray.filter((item) => {
+      const selectResto = storedDataArray.filter((item) => {
         const lowerName = item.name.toLowerCase();
         const lowerValue = event.target.value.toLowerCase();
         return lowerName.includes(lowerValue);
@@ -82,9 +98,10 @@ async function mainEvent() {
       // console.log('form submission'); // this is substituting for a "breakpoint"
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
-      currentArray = restoArrayMake(arrayFromJson.data);
+      currentArray = restoArrayMake(storedDataArray);
       console.log(currentArray);
       createHtmlList(currentArray);
+      addMapMarkers(map, currentArray);
     });
   }
 }
